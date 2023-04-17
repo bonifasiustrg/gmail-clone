@@ -1,17 +1,12 @@
     package com.bonifasiustrg.gmailclone
 
 import android.os.Bundle
-import android.webkit.WebSettings.TextSize
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -22,14 +17,12 @@ import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.MailOutline
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.Divider
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
@@ -38,7 +31,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.Icon
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -49,9 +41,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.bonifasiustrg.gmailclone.component.GmailDrawerMenu
 import com.bonifasiustrg.gmailclone.component.HomeAppBar
+import com.bonifasiustrg.gmailclone.component.HomeBottomMenu
+import com.bonifasiustrg.gmailclone.component.MailList
 import com.bonifasiustrg.gmailclone.ui.theme.GmailCloneTheme
 
     class MainActivity : ComponentActivity() {
@@ -128,13 +121,14 @@ fun GmailApp() {
                 }
             }
     }) {
-        Scaffold(topBar = { HomeAppBar(snackBarHostState, coroutineScope, drawerState)}
+        Scaffold(
+            topBar = { HomeAppBar(snackBarHostState, coroutineScope, drawerState)},
+            bottomBar = { HomeBottomMenu() }
         ){paddingValues ->
 //            Box(modifier = Modifier.fillMaxWidth().padding(it))
             // padding of the scaffold is enforced to be used
-            Column(modifier = Modifier.padding(paddingValues)) {
-                Text("Home")
-            }
+
+            MailList(paddingValues = paddingValues)
         }
     }
 

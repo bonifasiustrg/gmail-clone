@@ -56,12 +56,18 @@ fun HomeAppBar(snackbarHostState: SnackbarHostState, coroutineScope: CoroutineSc
                 Text(text = "Search mail", modifier = Modifier
                     .weight(2.0f)
                     .padding(start = 8.dp))
-                Icon(imageVector = Icons.Default.Search, contentDescription = "Search icon", modifier = Modifier.padding(horizontal = 8.dp))
-                Icon(painter = painterResource(id = R.drawable.profile_picture), contentDescription = "",
-                modifier = Modifier
-                    .size(35.dp)
-                    .clip(CircleShape)
-                    .background(Color.White))
+                IconButton(onClick = { /*TODO*/ }) {
+
+                    Icon(imageVector = Icons.Default.Search, contentDescription = "Search icon", modifier = Modifier.padding(horizontal = 8.dp))
+                }
+
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(painter = painterResource(id = R.drawable.profile_picture), contentDescription = "",
+                        modifier = Modifier
+                            .size(35.dp)
+                            .clip(CircleShape)
+                            .background(Color.White))
+                }
             }
         }
     }
