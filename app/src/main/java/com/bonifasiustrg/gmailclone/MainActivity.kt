@@ -73,6 +73,7 @@ fun GmailApp() {
     val coroutineScope = rememberCoroutineScope()
     val drawerState  = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scrollState = rememberScrollState()
+    val openDialog =  remember { mutableStateOf(false) }
 
 //    val menuList = listOf(Icons.Filled.Menu to "Menu", Icons.Filled.Person to "Person")
     val menuList = listOf(
@@ -124,7 +125,7 @@ fun GmailApp() {
             }
     }) {
         Scaffold(
-            topBar = { HomeAppBar(snackBarHostState, coroutineScope, drawerState)},
+            topBar = { HomeAppBar(snackBarHostState, coroutineScope, drawerState, openDialog)},
             bottomBar = { HomeBottomMenu() },
             floatingActionButton = { GmailFab(scrollState = scrollState)}
         ){paddingValues ->

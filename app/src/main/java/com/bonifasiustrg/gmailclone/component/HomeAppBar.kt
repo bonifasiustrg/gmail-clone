@@ -1,6 +1,8 @@
 package com.bonifasiustrg.gmailclone.component
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +22,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,8 +36,12 @@ import kotlinx.coroutines.launch
 
 @ExperimentalMaterial3Api
 @Composable
-fun HomeAppBar(snackbarHostState: SnackbarHostState, coroutineScope: CoroutineScope, drawerState: DrawerState) {
-    Box(modifier = Modifier.background(Color.Transparent).padding(10.dp)) {
+fun HomeAppBar(snackbarHostState: SnackbarHostState, coroutineScope: CoroutineScope,
+               drawerState: DrawerState, openDialog: MutableState<Boolean>
+) {
+    Box(modifier = Modifier
+        .background(Color.Transparent)
+        .padding(10.dp)) {
         Card(
             modifier = Modifier.requiredHeight(50.dp),
             shape = RoundedCornerShape(16.dp),
@@ -61,20 +68,21 @@ fun HomeAppBar(snackbarHostState: SnackbarHostState, coroutineScope: CoroutineSc
                     Icon(imageVector = Icons.Default.Search, contentDescription = "Search icon", modifier = Modifier.padding(horizontal = 8.dp))
                 }
 
-                IconButton(onClick = { /*TODO*/ }) {
-                    Icon(painter = painterResource(id = R.drawable.profile_picture), contentDescription = "",
-                        modifier = Modifier
-                            .size(35.dp)
-                            .clip(CircleShape)
-                            .background(Color.White))
+                Image(painter = painterResource(id = R.drawable.profile_picture), contentDescription = "",
+                    modifier = Modifier
+                        .size(35.dp)
+                        .clip(CircleShape)
+                        .background(Color.White)
+                        .clickable {
+                            openDialog.value = true
+                        }
+
+                )
+                if (openDialog.value) {
+                    AccountsDialog(openDialog = openDialog)
                 }
+
             }
         }
     }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun HomeAppBarPreview() {
 }
