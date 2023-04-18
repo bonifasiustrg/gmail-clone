@@ -26,15 +26,13 @@ fun HomeBottomMenu() {
         BottomMenuData.Meet
     )
 
-    NavigationBar(
-        modifier = Modifier.height(50.dp)
-    ) {
+    NavigationBar() {
         items.forEachIndexed { index, item ->
             NavigationBarItem(
                 label = { Text(text = item.title)},
 //                selected = selectedItem == index,
                 selected = false,
-                alwaysShowLabel = false,
+                alwaysShowLabel = true,
                 onClick = { selectedItem = index },
                 icon = { Icon(imageVector = item.icon, contentDescription = item.title) }
                 )

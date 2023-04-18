@@ -55,6 +55,114 @@ val mailList = listOf(
         "Email regarding something important",
         "Email regarding something important",
         "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
+    ),
+    MailData(
+        9, "Bonifasius Tarigan",
+        "Email regarding something important",
+        "Email regarding something important",
+        "22:22"
     )
 
 

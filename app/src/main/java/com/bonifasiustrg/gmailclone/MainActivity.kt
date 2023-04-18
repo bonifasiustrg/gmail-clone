@@ -42,6 +42,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bonifasiustrg.gmailclone.component.GmailDrawerMenu
+import com.bonifasiustrg.gmailclone.component.GmailFab
 import com.bonifasiustrg.gmailclone.component.HomeAppBar
 import com.bonifasiustrg.gmailclone.component.HomeBottomMenu
 import com.bonifasiustrg.gmailclone.component.MailList
@@ -71,6 +72,7 @@ fun GmailApp() {
     val snackBarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
     val drawerState  = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val scrollState = rememberScrollState()
 
 //    val menuList = listOf(Icons.Filled.Menu to "Menu", Icons.Filled.Person to "Person")
     val menuList = listOf(
@@ -123,12 +125,13 @@ fun GmailApp() {
     }) {
         Scaffold(
             topBar = { HomeAppBar(snackBarHostState, coroutineScope, drawerState)},
-            bottomBar = { HomeBottomMenu() }
+            bottomBar = { HomeBottomMenu() },
+            floatingActionButton = { GmailFab(scrollState = scrollState)}
         ){paddingValues ->
 //            Box(modifier = Modifier.fillMaxWidth().padding(it))
             // padding of the scaffold is enforced to be used
 
-            MailList(paddingValues = paddingValues)
+            MailList(paddingValues = paddingValues, scrollState)
         }
     }
 

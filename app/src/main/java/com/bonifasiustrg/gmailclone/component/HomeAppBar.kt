@@ -34,7 +34,7 @@ import kotlinx.coroutines.launch
 @ExperimentalMaterial3Api
 @Composable
 fun HomeAppBar(snackbarHostState: SnackbarHostState, coroutineScope: CoroutineScope, drawerState: DrawerState) {
-    Box(modifier = Modifier.padding(10.dp)) {
+    Box(modifier = Modifier.background(Color.Transparent).padding(10.dp)) {
         Card(
             modifier = Modifier.requiredHeight(50.dp),
             shape = RoundedCornerShape(16.dp),
@@ -77,5 +77,4 @@ fun HomeAppBar(snackbarHostState: SnackbarHostState, coroutineScope: CoroutineSc
 @Preview(showBackground = true)
 @Composable
 fun HomeAppBarPreview() {
-
 }

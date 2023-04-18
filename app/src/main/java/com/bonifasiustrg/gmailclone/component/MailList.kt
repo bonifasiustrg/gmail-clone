@@ -1,5 +1,8 @@
 package com.bonifasiustrg.gmailclone.component
 
+import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -31,12 +34,14 @@ import com.bonifasiustrg.gmailclone.models.MailData
 import com.bonifasiustrg.gmailclone.mailList
 
 @Composable
-fun MailList(paddingValues: PaddingValues) {
+fun MailList(paddingValues: PaddingValues, scrollState: ScrollState) {
     Box(modifier = Modifier.padding(paddingValues)) {
         LazyColumn(
             Modifier
                 .fillMaxSize()
-                .padding(16.dp)) {
+                .padding(16.dp)
+                .scrollable(scrollState, Orientation.Vertical)  // scrollstate for fab shanges
+        ) {
             items(mailList){ mailData ->
                 MailItem(mailData = mailData)
             }
